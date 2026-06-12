@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Dr. Rachel Korest | Korest Psychology</title>
+  <meta name="description" content="Meet Dr. Rachel Korest, Ph.D. — a licensed psychologist in Michigan specializing in ADHD, OCD, anxiety, and tic disorders in children and adolescents." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <defs>
+      <symbol id="logo-mark" viewBox="0 0 72 72">
+        <circle cx="36" cy="36" r="34" fill="#e8f0eb"/>
+        <line x1="36" y1="52" x2="36" y2="30" stroke="#1a3d2e" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M36 38 Q24 34 22 24 Q32 24 36 34" fill="#2c5f4a" opacity="0.9"/>
+        <path d="M36 34 Q48 30 50 20 Q40 20 36 30" fill="#3d7a5e" opacity="0.85"/>
+        <ellipse cx="36" cy="24" rx="3.5" ry="5" fill="#1a3d2e"/>
+      </symbol>
+      <symbol id="logo-mark-white" viewBox="0 0 72 72">
+        <circle cx="36" cy="36" r="34" fill="rgba(255,255,255,0.1)"/>
+        <line x1="36" y1="54" x2="36" y2="30" stroke="#e8f0eb" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M36 40 Q22 36 20 24 Q32 24 36 36" fill="#e8f0eb" opacity="0.9"/>
+        <path d="M36 36 Q50 32 52 20 Q40 20 36 32" fill="#a8c9b5" opacity="0.9"/>
+        <ellipse cx="36" cy="24" rx="3.5" ry="5.5" fill="#e8f0eb"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <style>
+    :root {
+      --primary:        #2c5f4a;
+      --primary-dark:   #1a3d2e;
+      --primary-light:  #e8f0eb;
+      --primary-mid:    #3d7a5e;
+      --accent:         #4a8c6e;
+      --white:          #ffffff;
+      --off-white:      #f7f5f0;
+      --text:           #1a1a1a;
+      --text-light:     #4a5243;
+      --border:         #dde5de;
+      --green-light:    #eef4f0;
+      --font-heading:   'Playfair Display', Georgia, serif;
+      --font-body:      'Inter', system-ui, sans-serif;
+      --radius-sm:  8px;
+      --radius-md:  16px;
+      --radius-lg:  24px;
+      --shadow-sm:  0 2px 8px rgba(26,61,46,0.08);
+      --shadow-md:  0 8px 32px rgba(26,61,46,0.12);
+      --shadow-lg:  0 20px 60px rgba(26,61,46,0.14);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--text); background: var(--white); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; line-height: 1.2; color: var(--primary-dark); }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+    h3 { font-size: 1.3rem; font-weight: 600; }
+    h4 { font-size: 1rem; font-weight: 600; }
+    p  { font-size: 1rem; line-height: 1.8; color: var(--text-light); }
+
+    .eyebrow-label {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--primary-mid); margin-bottom: 1.2rem;
+    }
+
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 2rem; }
+    section { padding: 6rem 0; }
+
+    .btn {
+      display: inline-block; font-family: var(--font-body);
+      font-size: 0.88rem; font-weight: 600; letter-spacing: 0.04em;
+      text-transform: uppercase; padding: 0.9rem 2rem; border-radius: 4px;
+      cursor: pointer; transition: all 0.22s ease; border: 2px solid transparent;
+    }
+    .btn-primary  { background: var(--primary-dark); color: var(--white); border-color: var(--primary-dark); }
+    .btn-primary:hover { background: var(--primary); border-color: var(--primary); }
+    .btn-outline  { background: transparent; color: var(--primary-dark); border-color: var(--primary-dark); }
+    .btn-outline:hover { background: var(--primary-dark); color: var(--white); }
+    .btn-white { background: var(--white); color: var(--primary-dark); border-color: var(--white); }
+    .btn-white:hover { background: transparent; color: var(--white); }
+
+    .photo-placeholder {
+      background: var(--primary-light); border-radius: var(--radius-lg);
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 0.75rem;
+      color: var(--primary-mid); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.03em;
+    }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; max-width: 1120px; margin: 0 auto; padding: 0 2rem; }
+    .nav-logo { display: flex; align-items: center; gap: 0.85rem; text-decoration: none; }
+    .nav-logo-mark { width: 42px; height: 42px; flex-shrink: 0; }
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1.2; }
+    .nav-logo-text strong { font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; color: var(--primary-dark); letter-spacing: -0.01em; }
+    .nav-logo-text span { font-family: var(--font-body); font-size: 0.65rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--primary-mid); }
+    .nav-links { display: flex; align-items: center; gap: 2.25rem; }
+    .nav-links a { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.03em; color: var(--text); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+    .nav-cta { margin-left: 0.5rem; color: var(--white) !important; }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; }
+
+    /* PAGE HERO */
+    .page-hero {
+      background: var(--off-white); padding: 5rem 0 4rem; position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; top: 0; right: 0;
+      width: 50%; height: 100%;
+      background: linear-gradient(135deg, transparent 40%, rgba(44,95,74,0.04) 100%);
+      pointer-events: none;
+    }
+    .page-hero-inner { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: center; }
+    .page-hero-content h1 { margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .page-hero-content .subtitle {
+      font-size: 1.15rem; color: var(--text-light); line-height: 1.8; margin-bottom: 2.5rem; max-width: 520px;
+    }
+    .page-hero-photo { height: 480px; position: relative; }
+    .page-hero-photo .photo-placeholder { height: 100%; }
+    .page-hero-photo::after {
+      content: ''; position: absolute; bottom: -16px; right: -16px;
+      width: 70%; height: 70%; border-radius: var(--radius-lg);
+      border: 1.5px solid rgba(44,95,74,0.2); z-index: 0; pointer-events: none;
+    }
+
+    /* CREDENTIAL BADGE */
+    .cred-strip {
+      display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem;
+    }
+    .cred-chip {
+      background: var(--primary-dark); color: rgba(255,255,255,0.9);
+      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.03em;
+      padding: 0.4rem 0.9rem; border-radius: 20px;
+    }
+
+    /* PHILOSOPHY SECTION */
+    .philosophy { background: var(--white); }
+    .philosophy-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .philosophy-text h2 { margin-bottom: 1.5rem; }
+    .philosophy-text p { margin-bottom: 1.1rem; }
+    .philosophy-pillars { display: flex; flex-direction: column; gap: 1rem; }
+    .pillar {
+      padding: 1.75rem 2rem; border-radius: var(--radius-md);
+      background: var(--off-white); border: 1px solid var(--border);
+      border-left: 3px solid var(--primary);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .pillar:hover { box-shadow: var(--shadow-sm); transform: translateX(4px); }
+    .pillar h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
+    .pillar p { font-size: 0.91rem; margin: 0; line-height: 1.7; }
+
+    /* CREDENTIALS DEEP-DIVE */
+    .credentials-section { background: var(--off-white); }
+    .credentials-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .credentials-block { display: flex; flex-direction: column; gap: 1.25rem; }
+    .cred-card {
+      background: var(--white); border-radius: var(--radius-md);
+      padding: 1.75rem 2rem; border: 1px solid var(--border);
+      display: flex; gap: 1.25rem; align-items: flex-start;
+      transition: box-shadow 0.2s;
+    }
+    .cred-card:hover { box-shadow: var(--shadow-sm); }
+    .cred-icon {
+      width: 44px; height: 44px; min-width: 44px;
+      background: var(--primary-light); border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .cred-icon svg { color: var(--primary); }
+    .cred-card h3 { font-size: 1rem; margin-bottom: 0.2rem; }
+    .cred-card p { font-size: 0.88rem; margin: 0; }
+    .cred-card .institution { font-size: 0.8rem; font-weight: 500; color: var(--primary-mid); margin-top: 0.15rem; display: block; }
+
+    .specialties-list { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1rem; }
+    .specialty-item {
+      display: flex; align-items: center; gap: 0.85rem;
+      font-size: 0.93rem; color: var(--text-light);
+    }
+    .specialty-dot {
+      width: 8px; height: 8px; min-width: 8px; border-radius: 50%;
+      background: var(--primary); flex-shrink: 0;
+    }
+
+    /* PERSONAL SECTION */
+    .personal-section { background: var(--white); }
+    .personal-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .personal-text h2 { margin-bottom: 1.25rem; }
+    .personal-text p { margin-bottom: 1.1rem; }
+    .fun-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+    .fun-fact {
+      background: var(--primary-light); border-radius: var(--radius-md);
+      padding: 1.4rem 1.5rem; text-align: center;
+    }
+    .fun-fact .emoji { font-size: 1.75rem; margin-bottom: 0.5rem; }
+    .fun-fact p { font-size: 0.88rem; color: var(--primary-dark); margin: 0; font-weight: 500; line-height: 1.5; }
+    .personal-photo { height: 420px; position: relative; }
+    .personal-photo .photo-placeholder { height: 100%; }
+
+    /* WHAT TO EXPECT */
+    .expect-section { background: var(--off-white); }
+    .expect-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3.5rem; }
+    .expect-step {
+      background: var(--white); border-radius: var(--radius-md);
+      padding: 2.25rem 2rem; border: 1px solid var(--border);
+      position: relative;
+    }
+    .step-number {
+      font-family: var(--font-heading); font-size: 3rem; font-weight: 700;
+      color: var(--primary-light); line-height: 1; margin-bottom: 1rem;
+    }
+    .expect-step h3 { font-size: 1.08rem; margin-bottom: 0.6rem; }
+    .expect-step p { font-size: 0.91rem; margin: 0; line-height: 1.7; }
+
+    /* CTA BAND */
+    .cta-band { background: var(--primary-dark); padding: 5.5rem 0; text-align: center; position: relative; overflow: hidden; }
+    .cta-band::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .cta-band h2 { color: var(--white); margin-bottom: 1rem; }
+    .cta-band p { color: rgba(255,255,255,0.72); font-size: 1.05rem; max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.8; }
+
+    /* FOOTER */
+    footer { background: var(--primary-dark); border-top: 1px solid rgba(255,255,255,0.07); padding: 4rem 0 2rem; color: rgba(255,255,255,0.7); }
+    .footer-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr; gap: 3.5rem; margin-bottom: 3rem; }
+    .footer-logo { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+    .footer-logo-mark { width: 38px; height: 38px; flex-shrink: 0; }
+    .footer-logo-text strong { font-family: var(--font-heading); font-size: 1.05rem; color: var(--white); display: block; }
+    .footer-logo-text span { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+    .footer-brand p { font-size: 0.9rem; color: rgba(255,255,255,0.55); line-height: 1.75; }
+    footer h4 { font-family: var(--font-body); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 1rem; }
+    footer ul { display: flex; flex-direction: column; gap: 0.55rem; }
+    footer ul li a { font-size: 0.88rem; color: rgba(255,255,255,0.65); transition: color 0.2s; }
+    footer ul li a:hover { color: var(--white); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; text-align: center; }
+    .footer-bottom p { font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+    .footer-bottom a { color: rgba(255,255,255,0.45); transition: color 0.2s; }
+    .footer-bottom a:hover { color: var(--white); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .page-hero-inner, .philosophy-inner, .credentials-inner, .personal-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .page-hero-photo { height: 340px; }
+      .personal-photo { height: 300px; }
+      .expect-steps { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .fun-facts { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      section { padding: 4rem 0; }
+      .nav-toggle { display: flex; }
+      .nav-links { display: none; position: absolute; top: 72px; left: 0; right: 0; background: var(--white); flex-direction: column; padding: 1.5rem 2rem; gap: 1rem; border-bottom: 1px solid var(--border); box-shadow: var(--shadow-sm); }
+      .nav-links.open { display: flex; }
+      nav { position: relative; }
+      .fun-facts { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg class="nav-logo-mark" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+        <use href="#logo-mark"/>
+      </svg>
+      <div class="nav-logo-text">
+        <strong>Korest Psychology</strong>
+        <span>Child &amp; Family Therapy</span>
+      </div>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="this.parentElement.querySelector('.nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="services.html">Services</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="contact.html" class="btn btn-primary nav-cta">Schedule Appointment</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="page-hero-content">
+        <span class="eyebrow-label">About Dr. Rachel</span>
+        <h1>Hi, I'm Dr. Rachel — and I'm here to help.</h1>
+        <p class="subtitle">I'm a licensed psychologist in Michigan who specializes in helping children, adolescents, and families navigate ADHD, OCD, anxiety, tic disorders, and behavioral challenges — with evidence-based strategies that actually work in real life.</p>
+      </div>
+      <div class="page-hero-photo">
+        <div class="photo-placeholder">
+          <svg width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"/></svg>
+          Photo of Dr. Rachel Korest
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+  <div class="container">
+    <div class="philosophy-inner">
+      <div class="philosophy-text">
+        <span class="eyebrow-label">My Approach</span>
+        <h2>Therapy should give your family real tools, not just a place to talk.</h2>
+        <p>When families come to me, they're often exhausted. They've read the books, tried the strategies, and are still stuck. My job isn't to tell you what you're doing wrong — it's to understand your child specifically and build a plan that actually fits your family.</p>
+        <p>I work from a collaborative model, which means you're a partner in this process, not just a bystander. Parents learn the same skills and language their child is learning in session, so progress doesn't stop when the appointment ends.</p>
+        <p>My treatment approach is grounded in the research. For anxiety and OCD, I use Cognitive Behavioral Therapy (CBT) with Exposure and Response Prevention (ERP). For tics, I use Comprehensive Behavioral Intervention for Tics (CBIT). For ADHD and behavioral challenges, I draw on behavioral parent training and executive function coaching — and I tailor everything to the individual child in front of me.</p>
+      </div>
+      <div class="philosophy-pillars">
+        <div class="pillar">
+          <h3>Evidence-Based First</h3>
+          <p>I use treatments with strong research support — not trends. If something has been studied and shown to work, that's the foundation we build on.</p>
+        </div>
+        <div class="pillar">
+          <h3>Practical Over Perfect</h3>
+          <p>Strategies need to work on a Tuesday morning when everyone's running late. I focus on tools families can actually use, not just what sounds good in theory.</p>
+        </div>
+        <div class="pillar">
+          <h3>Parents as Partners</h3>
+          <p>Children don't grow in a vacuum. I actively involve parents throughout treatment so progress carries over into daily life at home and school.</p>
+        </div>
+        <div class="pillar">
+          <h3>The Whole Child</h3>
+          <p>I look beyond the presenting problem to understand each child's strengths, environment, and what makes them tick — because that context shapes everything.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="credentials-section">
+  <div class="container">
+    <div class="credentials-inner">
+      <div>
+        <span class="eyebrow-label">Education &amp; Training</span>
+        <h2>Background &amp; Credentials</h2>
+        <p style="margin-top:1rem; margin-bottom:2rem;">My training spans assessment, intervention, and consultation across school, clinical, and community settings — giving me a broad perspective on how children develop and where things can go sideways.</p>
+        <div class="credentials-block">
+          <div class="cred-card">
+            <div class="cred-icon">
+              <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.627 48.627 0 0 1 12 20.904a48.627 48.627 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.57 50.57 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.902 59.902 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"/></svg>
+            </div>
+            <div>
+              <h3>Ph.D., School Psychology</h3>
+              <span class="institution">Michigan State University</span>
+              <p>Doctoral training in assessment, intervention, and consultation for children and adolescents across educational and clinical settings.</p>
+            </div>
+          </div>
+          <div class="cred-card">
+            <div class="cred-icon">
+              <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.627 48.627 0 0 1 12 20.904a48.627 48.627 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.57 50.57 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.902 59.902 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"/></svg>
+            </div>
+            <div>
+              <h3>M.A., School Psychology</h3>
+              <span class="institution">Michigan State University</span>
+              <p>Graduate-level specialization in psychological principles, research methodology, and applied work with children and families.</p>
+            </div>
+          </div>
+          <div class="cred-card">
+            <div class="cred-icon">
+              <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.627 48.627 0 0 1 12 20.904a48.627 48.627 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.57 50.57 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.902 59.902 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"/></svg>
+            </div>
+            <div>
+              <h3>B.A., Psychology</h3>
+              <span class="institution">The College of Wooster</span>
+              <p>Undergraduate foundation in psychological science, research methods, and human development.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow-label">Areas of Expertise</span>
+        <h2>What I Treat</h2>
+        <p style="margin-top:1rem; margin-bottom:1.5rem;">I've built focused expertise in areas where specialized, evidence-based treatment makes a meaningful difference in children's lives.</p>
+        <div class="specialties-list">
+          <div class="specialty-item"><span class="specialty-dot"></span>ADHD — assessment, coaching, and behavioral strategies</div>
+          <div class="specialty-item"><span class="specialty-dot"></span>OCD — CBT with ERP (Exposure and Response Prevention)</div>
+          <div class="specialty-item"><span class="specialty-dot"></span>Anxiety disorders — including generalized, social, and separation anxiety</div>
+          <div class="specialty-item"><span class="specialty-dot"></span>Tic disorders &amp; Tourette Syndrome — CBIT and Habit Reversal Training</div>
+          <div class="specialty-item"><span class="specialty-dot"></span>Behavioral challenges — meltdowns, defiance, transitions</div>
+          <div class="specialty-item"><span class="specialty-dot"></span>Executive function difficulties</div>
+          <div class="specialty-item"><span class="specialty-dot"></span>Parent coaching &amp; family support</div>
+          <div class="specialty-item"><span class="specialty-dot"></span>School-related stress and avoidance</div>
+        </div>
+        <div style="margin-top: 2.5rem; padding: 1.5rem; background: var(--white); border-radius: var(--radius-md); border: 1px solid var(--border); border-left: 3px solid var(--primary);">
+          <p style="font-size: 0.93rem; margin: 0; line-height: 1.75;"><strong style="color: var(--primary-dark);">Serving Michigan families</strong> in-person and via telehealth. I work with children and young adults ages 3–23 and their families.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONAL / FUN FACTS -->
+<section class="personal-section">
+  <div class="container">
+    <div class="personal-inner">
+      <div class="personal-photo">
+        <div class="photo-placeholder">
+          <svg width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"/></svg>
+          Casual photo
+        </div>
+      </div>
+      <div class="personal-text">
+        <span class="eyebrow-label">A Little More About Me</span>
+        <h2>Outside the office.</h2>
+        <p>When I'm not in session, you'll usually find me outside. I believe in the same things for myself that I encourage for the families I work with — movement, connection, and not taking life too seriously.</p>
+        <p>I became a psychologist because I was endlessly curious about why kids behave the way they do, and I quickly realized that understanding a child means understanding the whole system around them. That belief still shapes how I work every day.</p>
+        <p>I genuinely like kids — the loud ones, the anxious ones, the ones who'd rather be anywhere but a therapist's office. Meeting them where they are is something I find deeply meaningful.</p>
+        <div class="fun-facts">
+          <div class="fun-fact">
+            <div class="emoji">🐕</div>
+            <p>Dog person (proudly)</p>
+          </div>
+          <div class="fun-fact">
+            <div class="emoji">🌿</div>
+            <p>Outdoors enthusiast — hiking when I can</p>
+          </div>
+          <div class="fun-fact">
+            <div class="emoji">📚</div>
+            <p>Always mid-book (usually two at once)</p>
+          </div>
+          <div class="fun-fact">
+            <div class="emoji">☕</div>
+            <p>Coffee before anything. Non-negotiable.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT TO EXPECT -->
+<section class="expect-section">
+  <div class="container">
+    <div class="section-header" style="text-align:center; max-width:620px; margin: 0 auto 0;">
+      <span class="eyebrow-label">Getting Started</span>
+      <h2>What to Expect</h2>
+      <p>Starting therapy can feel like a big step. Here's exactly what happens when you reach out.</p>
+    </div>
+    <div class="expect-steps">
+      <div class="expect-step">
+        <div class="step-number">01</div>
+        <h3>Free Consultation Call</h3>
+        <p>We'll spend about 15–20 minutes on the phone so you can share what's going on and ask any questions. There's no pressure — this call is just about figuring out if we're a good fit.</p>
+      </div>
+      <div class="expect-step">
+        <div class="step-number">02</div>
+        <h3>Intake &amp; Assessment</h3>
+        <p>If we decide to move forward, we'll schedule an intake session to get a fuller picture of your child's history, strengths, and challenges. This shapes everything that follows.</p>
+      </div>
+      <div class="expect-step">
+        <div class="step-number">03</div>
+        <h3>A Personalized Plan</h3>
+        <p>Based on what I learn, I'll put together a treatment plan tailored to your child — with clear goals, a timeline, and a role for you as a parent throughout the process.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="container">
+    <h2>Ready to take the first step?</h2>
+    <p>Reach out today to schedule a free consultation and see if we're a good fit for your family.</p>
+    <a href="contact.html" class="btn btn-white">Schedule Appointment</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg class="footer-logo-mark" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+            <use href="#logo-mark-white"/>
+          </svg>
+          <div class="footer-logo-text">
+            <strong>Korest Psychology</strong>
+            <span>Child &amp; Family Therapy</span>
+          </div>
+        </div>
+        <p>Evidence-based therapy for children, adolescents, and families. Serving Michigan in-person and virtually.</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="contact.html">Schedule Appointment</a></li>
+          <li><a href="contact.html">Send a Message</a></li>
+        </ul>
+        <br/>
+        <h4>Insurance</h4>
+        <ul>
+          <li><a href="#">BCBS Michigan</a></li>
+          <li><a href="#">Blue Care Network</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Korest Psychology &nbsp;·&nbsp; <a href="#">Privacy Policy</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

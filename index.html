@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Korest Psychology | Child & Family Therapy</title>
+  <meta name="description" content="Evidence-based therapy and parent coaching to help children build confidence, develop skills, and thrive at home, school, and beyond." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- ============================================================
+       LOGO SVG — defined once, reused via <use> or inline copies
+  ============================================================ -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <defs>
+
+      <!-- ── FULL STACKED LOGO — Sprout ── viewBox 0 0 260 72 -->
+      <symbol id="logo-full" viewBox="0 0 260 72">
+        <circle cx="36" cy="36" r="34" fill="#e8f0eb"/>
+        <line x1="36" y1="52" x2="36" y2="30" stroke="#1a3d2e" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M36 38 Q24 34 22 24 Q32 24 36 34" fill="#2c5f4a" opacity="0.9"/>
+        <path d="M36 34 Q48 30 50 20 Q40 20 36 30" fill="#3d7a5e" opacity="0.85"/>
+        <ellipse cx="36" cy="24" rx="3.5" ry="5" fill="#1a3d2e"/>
+        <text x="82" y="30" font-family="'Playfair Display',Georgia,serif" font-size="22" font-weight="700" fill="#1a3d2e" letter-spacing="-0.3">Korest</text>
+        <text x="82" y="54" font-family="'Playfair Display',Georgia,serif" font-size="22" font-weight="400" fill="#2c5f4a" letter-spacing="-0.3">Psychology</text>
+        <line x1="82" y1="60" x2="246" y2="60" stroke="#3d7a5e" stroke-width="0.75" opacity="0.35"/>
+        <text x="82" y="70" font-family="'Inter',sans-serif" font-size="8.5" font-weight="500" fill="#3d7a5e" letter-spacing="2.2">CHILD &amp; FAMILY THERAPY</text>
+      </symbol>
+
+      <!-- ── MARK ONLY (for nav / icon) — Sprout light ── viewBox 0 0 72 72 -->
+      <symbol id="logo-mark" viewBox="0 0 72 72">
+        <circle cx="36" cy="36" r="34" fill="#e8f0eb"/>
+        <line x1="36" y1="52" x2="36" y2="30" stroke="#1a3d2e" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M36 38 Q24 34 22 24 Q32 24 36 34" fill="#2c5f4a" opacity="0.9"/>
+        <path d="M36 34 Q48 30 50 20 Q40 20 36 30" fill="#3d7a5e" opacity="0.85"/>
+        <ellipse cx="36" cy="24" rx="3.5" ry="5" fill="#1a3d2e"/>
+      </symbol>
+
+      <!-- ── MARK ONLY — Sprout dark (for footer/dark bg) ── viewBox 0 0 72 72 -->
+      <symbol id="logo-mark-white" viewBox="0 0 72 72">
+        <circle cx="36" cy="36" r="34" fill="rgba(255,255,255,0.1)"/>
+        <line x1="36" y1="54" x2="36" y2="30" stroke="#e8f0eb" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M36 40 Q22 36 20 24 Q32 24 36 36" fill="#e8f0eb" opacity="0.9"/>
+        <path d="M36 36 Q50 32 52 20 Q40 20 36 32" fill="#a8c9b5" opacity="0.9"/>
+        <ellipse cx="36" cy="24" rx="3.5" ry="5.5" fill="#e8f0eb"/>
+      </symbol>
+
+    </defs>
+  </svg>
+
+  <style>
+    /* ============================================================
+       DESIGN TOKENS
+    ============================================================ */
+    :root {
+      --primary:        #2c5f4a;
+      --primary-dark:   #1a3d2e;
+      --primary-light:  #e8f0eb;
+      --primary-mid:    #3d7a5e;
+      --accent:         #4a8c6e;
+      --white:          #ffffff;
+      --off-white:      #f7f5f0;
+      --text:           #1a1a1a;
+      --text-light:     #4a5243;
+      --border:         #dde5de;
+      --green-light:    #eef4f0;
+      --font-heading:   'Playfair Display', Georgia, serif;
+      --font-body:      'Inter', system-ui, sans-serif;
+      --radius-sm:  8px;
+      --radius-md:  16px;
+      --radius-lg:  24px;
+      --shadow-sm:  0 2px 8px rgba(26,61,46,0.08);
+      --shadow-md:  0 8px 32px rgba(26,61,46,0.12);
+      --shadow-lg:  0 20px 60px rgba(26,61,46,0.14);
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ============================================================
+       TYPOGRAPHY
+    ============================================================ */
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--primary-dark);
+    }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+    h3 { font-size: 1.3rem; font-weight: 600; }
+    h4 { font-size: 1rem; font-weight: 600; }
+    p  { font-size: 1rem; line-height: 1.8; color: var(--text-light); }
+
+    .eyebrow-label {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--primary-mid);
+      margin-bottom: 1.2rem;
+    }
+
+    /* ============================================================
+       LAYOUT HELPERS
+    ============================================================ */
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 2rem; }
+    section    { padding: 6rem 0; }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      border: 2px solid transparent;
+    }
+    .btn-primary  { background: var(--primary-dark); color: var(--white); border-color: var(--primary-dark); }
+    .btn-primary:hover { background: var(--primary); border-color: var(--primary); }
+    .btn-outline  { background: transparent; color: var(--primary-dark); border-color: var(--primary-dark); }
+    .btn-outline:hover { background: var(--primary-dark); color: var(--white); }
+    .btn-white    { background: var(--white); color: var(--primary-dark); border-color: var(--white); }
+    .btn-white:hover { background: transparent; color: var(--white); }
+
+    /* ============================================================
+       PHOTO PLACEHOLDER
+    ============================================================ */
+    .photo-placeholder {
+      background: var(--primary-light);
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      color: var(--primary-mid);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+    }
+
+    /* ============================================================
+       NAV
+    ============================================================ */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
+    .nav-logo-mark {
+      width: 42px;
+      height: 42px;
+      flex-shrink: 0;
+    }
+    .nav-logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    .nav-logo-text strong {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--primary-dark);
+      letter-spacing: -0.01em;
+    }
+    .nav-logo-text span {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--primary-mid);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.25rem;
+    }
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      color: var(--text);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-cta { margin-left: 0.5rem; color: var(--white) !important; }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      background: var(--off-white);
+      padding: 6rem 0 5.5rem;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent 40%, rgba(44,95,74,0.04) 100%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .hero-content .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--primary-mid);
+      margin-bottom: 1.4rem;
+    }
+    .hero-content h1 { color: var(--primary-dark); margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+    .hero-content h1 em { font-style: italic; color: var(--primary); }
+    .hero-content p { font-size: 1.05rem; color: var(--text-light); margin-bottom: 2.5rem; line-height: 1.85; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+    .hero-photo { height: 520px; border-radius: var(--radius-lg); position: relative; }
+    .hero-photo .photo-placeholder { height: 100%; }
+    .hero-badge {
+      position: absolute;
+      bottom: -1.5rem; left: -1.5rem;
+      background: var(--primary-dark);
+      color: white;
+      border-radius: var(--radius-md);
+      padding: 1.1rem 1.6rem;
+      font-size: 0.85rem;
+      font-weight: 400;
+      box-shadow: var(--shadow-md);
+      line-height: 1.45;
+    }
+    .hero-badge strong {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+    }
+
+    /* ============================================================
+       PAIN POINTS
+    ============================================================ */
+    .pain-points { background: var(--white); }
+    .pain-points-inner { display: grid; grid-template-columns: 1fr 1.1fr; gap: 5rem; align-items: center; }
+    .pain-points-text h2 { margin-bottom: 1.25rem; letter-spacing: -0.01em; }
+    .pain-points-text h2 em { font-style: italic; color: var(--primary); }
+    .pain-points-text p { margin-bottom: 2rem; }
+    .pain-list { display: flex; flex-direction: column; gap: 0.6rem; }
+    .pain-item {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1rem 1.25rem; border-radius: var(--radius-sm);
+      border-left: 2px solid transparent;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .pain-item:hover { border-left-color: var(--primary); background: var(--primary-light); }
+    .pain-icon {
+      width: 22px; height: 22px; min-width: 22px;
+      background: var(--primary-light);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 2px; flex-shrink: 0;
+    }
+    .pain-icon svg { color: var(--primary); }
+    .pain-item p { font-size: 0.93rem; margin: 0; line-height: 1.65; }
+
+    /* ============================================================
+       ABOUT TEASER
+    ============================================================ */
+    .about-teaser { background: var(--off-white); }
+    .about-teaser-inner { display: grid; grid-template-columns: 1fr 1.45fr; gap: 5rem; align-items: center; }
+    .about-photo-wrap { position: relative; height: 480px; }
+    .about-photo-wrap .photo-placeholder {
+      height: 100%; border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg); position: relative; z-index: 1;
+    }
+    .about-photo-wrap::after {
+      content: '';
+      position: absolute; bottom: -18px; right: -18px;
+      width: 75%; height: 75%;
+      border-radius: var(--radius-lg);
+      border: 1.5px solid rgba(44,95,74,0.2);
+      z-index: 0; pointer-events: none;
+    }
+    .about-content h2 { margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+    .about-content .tagline {
+      font-family: var(--font-heading);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--primary);
+      margin-bottom: 1.75rem;
+      line-height: 1.55;
+    }
+    .about-content p { margin-bottom: 1.1rem; line-height: 1.8; }
+    .credentials-row {
+      display: flex; flex-direction: column; gap: 0.35rem;
+      margin: 1.5rem 0; padding: 1.25rem 1.5rem;
+      background: var(--primary-light);
+      border-radius: var(--radius-sm);
+      border-left: 3px solid var(--primary);
+    }
+    .credentials-row span { font-size: 0.88rem; color: var(--primary-dark); font-weight: 400; line-height: 1.6; }
+    .credentials-row span strong { font-weight: 600; }
+
+    /* ============================================================
+       SERVICES OVERVIEW
+    ============================================================ */
+    .services-overview { background: var(--white); }
+    .section-header { text-align: center; max-width: 620px; margin: 0 auto 4rem; }
+    .section-header h2 { margin-bottom: 0.75rem; letter-spacing: -0.01em; }
+    .section-header p { font-size: 1.02rem; }
+    .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    .service-card {
+      background: var(--off-white); border-radius: var(--radius-md);
+      padding: 2.5rem; border: 1px solid var(--border);
+      transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+    }
+    .service-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); border-color: rgba(44,95,74,0.3); }
+    .service-icon {
+      width: 48px; height: 48px; background: var(--primary-light);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .service-icon svg { color: var(--primary); }
+    .service-card h3 { font-size: 1.15rem; margin-bottom: 0.6rem; color: var(--primary-dark); }
+    .service-card p { font-size: 0.93rem; margin: 0; line-height: 1.7; }
+    .learn-more {
+      display: inline-block; margin-top: 1.25rem;
+      font-size: 0.82rem; font-weight: 600; color: var(--primary);
+      letter-spacing: 0.06em; text-transform: uppercase;
+      transition: letter-spacing 0.2s;
+    }
+    .learn-more::after { content: ' →'; }
+    .service-card:hover .learn-more { letter-spacing: 0.1em; }
+
+    /* ============================================================
+       FAQ
+    ============================================================ */
+    .faq-section { background: var(--white); padding: 6rem 0; }
+    .faq-inner { max-width: 800px; margin: 0 auto; }
+    .faq-list { margin-top: 0; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+    .faq-q {
+      width: 100%; background: none; border: none;
+      padding: 1.5rem 0;
+      text-align: left;
+      font-family: var(--font-heading);
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--primary-dark);
+      cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 1.25rem;
+      transition: color 0.2s;
+      line-height: 1.4;
+    }
+    .faq-q:hover { color: var(--primary); }
+    .faq-icon {
+      width: 30px; height: 30px; min-width: 30px;
+      border: 1.5px solid rgba(44,95,74,0.4);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--primary);
+      font-size: 1.3rem; line-height: 1;
+      font-family: var(--font-body); font-weight: 300; font-style: normal;
+      transition: transform 0.25s, background 0.25s, border-color 0.25s, color 0.25s;
+      user-select: none;
+    }
+    .faq-item.open .faq-q { color: var(--primary); }
+    .faq-item.open .faq-icon {
+      background: var(--primary-dark);
+      border-color: var(--primary-dark);
+      color: white;
+      transform: rotate(45deg);
+    }
+    .faq-a {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.35s ease, padding 0.25s ease;
+      padding-bottom: 0;
+    }
+    .faq-item.open .faq-a {
+      max-height: 600px;
+      padding-bottom: 1.6rem;
+    }
+    .faq-a p { font-size: 0.97rem; color: var(--text-light); line-height: 1.85; max-width: 680px; }
+
+    /* ============================================================
+       INSURANCE STRIP
+    ============================================================ */
+    .insurance-strip {
+      background: var(--primary-dark); padding: 1.5rem 0; text-align: center;
+    }
+    .insurance-strip p { font-size: 0.88rem; color: rgba(255,255,255,0.82); margin: 0; letter-spacing: 0.03em; }
+    .insurance-strip p strong { color: var(--white); }
+
+    /* ============================================================
+       CTA BAND
+    ============================================================ */
+    .cta-band {
+      background: var(--primary-dark); padding: 5.5rem 0; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-band::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .cta-band h2 { color: var(--white); margin-bottom: 1rem; letter-spacing: -0.01em; }
+    .cta-band h2 em { font-style: italic; color: rgba(255,255,255,0.75); }
+    .cta-band p { color: rgba(255,255,255,0.72); font-size: 1.05rem; max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.8; }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: var(--primary-dark);
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 4rem 0 2rem;
+      color: rgba(255,255,255,0.7);
+    }
+    .footer-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr; gap: 3.5rem; margin-bottom: 3rem; }
+    .footer-logo {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .footer-logo-mark { width: 38px; height: 38px; flex-shrink: 0; }
+    .footer-logo-text strong { font-family: var(--font-heading); font-size: 1.05rem; color: var(--white); display: block; }
+    .footer-logo-text span {
+      font-size: 0.65rem; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; color: rgba(255,255,255,0.45);
+    }
+    .footer-brand p { font-size: 0.9rem; color: rgba(255,255,255,0.55); line-height: 1.75; }
+    footer h4 {
+      font-family: var(--font-body); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(255,255,255,0.45); margin-bottom: 1rem;
+    }
+    footer ul { display: flex; flex-direction: column; gap: 0.55rem; }
+    footer ul li a { font-size: 0.88rem; color: rgba(255,255,255,0.65); transition: color 0.2s; }
+    footer ul li a:hover { color: var(--white); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; text-align: center; }
+    .footer-bottom p { font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+    .footer-bottom a { color: rgba(255,255,255,0.45); transition: color 0.2s; }
+    .footer-bottom a:hover { color: var(--white); }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 900px) {
+      .hero-inner, .pain-points-inner, .about-teaser-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-photo { height: 360px; order: -1; }
+      .hero-badge { bottom: -1rem; left: 1rem; }
+      .about-photo-wrap { height: 320px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+    @media (max-width: 640px) {
+      section { padding: 4rem 0; }
+      .nav-toggle { display: flex; }
+      .nav-links {
+        display: none; position: absolute;
+        top: 72px; left: 0; right: 0;
+        background: var(--white);
+        flex-direction: column;
+        padding: 1.5rem 2rem; gap: 1rem;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow-sm);
+      }
+      .nav-links.open { display: flex; }
+      nav { position: relative; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ======= NAV ======= -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg class="nav-logo-mark" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+        <use href="#logo-mark"/>
+      </svg>
+      <div class="nav-logo-text">
+        <strong>Korest Psychology</strong>
+        <span>Child &amp; Family Therapy</span>
+      </div>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="this.parentElement.querySelector('.nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="contact.html" class="btn btn-primary nav-cta">Schedule Appointment</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ======= HERO ======= -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="eyebrow">Licensed Psychologist · Michigan</span>
+        <h1>Helping Kids Thrive. Helping Parents Feel Confident.</h1>
+        <p>Evidence-based therapy and parent coaching to help children build confidence, develop skills, and thrive at home, school, and beyond.</p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">Schedule Appointment</a>
+          <a href="about.html" class="btn btn-primary">Meet Dr. Rachel</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="photo-placeholder">
+          <svg width="64" height="64" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+          </svg>
+          Your photo here
+        </div>
+        <div class="hero-badge">
+          <strong>Ages 3–23</strong>
+          In-person &amp; virtual
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= PAIN POINTS ======= -->
+<section class="pain-points">
+  <div class="container">
+    <div class="pain-points-inner">
+      <div class="pain-points-text">
+        <span class="eyebrow-label">You may be here because</span>
+        <h2>These challenges feel overwhelming — and you're not sure where to turn.</h2>
+        <p>You love your child deeply and want to help, but the day-to-day feels exhausting. You don't have to navigate this alone.</p>
+        <a href="contact.html" class="btn btn-primary">Let's Talk</a>
+      </div>
+      <div class="pain-list">
+        <div class="pain-item">
+          <div class="pain-icon"><svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+          <p>Mornings are chaos, homework battles drag on for hours, and even small transitions turn into meltdowns.</p>
+        </div>
+        <div class="pain-item">
+          <div class="pain-icon"><svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+          <p>Your child's worries, rituals, or repetitive behaviors are starting to take over daily life.</p>
+        </div>
+        <div class="pain-item">
+          <div class="pain-icon"><svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+          <p>Tics are causing stress — for your child, and for you, watching them struggle.</p>
+        </div>
+        <div class="pain-item">
+          <div class="pain-icon"><svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+          <p>You've tried strategies that work for other kids, but nothing seems to stick for yours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= ABOUT TEASER ======= -->
+<section class="about-teaser">
+  <div class="container">
+    <div class="about-teaser-inner">
+      <div class="about-photo-wrap">
+        <div class="photo-placeholder">
+          <svg width="56" height="56" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+          </svg>
+          Your photo here
+        </div>
+      </div>
+      <div class="about-content">
+        <span class="eyebrow-label">About Dr. Rachel</span>
+        <h2>Hi, I'm Dr. Rachel — and I'm here to help.</h2>
+        <p>I'm a licensed psychologist who specializes in helping children, adolescents, and parents navigate ADHD, OCD, anxiety, tic disorders, and behavioral challenges.</p>
+        <div class="credentials-row">
+          <span><strong>B.A., Psychology</strong> — The College of Wooster</span>
+          <span><strong>M.A. &amp; Ph.D., School Psychology</strong> — Michigan State University</span>
+        </div>
+        <p>My approach is practical, collaborative, and grounded in evidence-based treatments. I believe therapy should give families clear strategies and real tools that create meaningful change in everyday life.</p>
+        <p>When families come to me, they're often overwhelmed and unsure where to start. Together, we'll build a plan that helps your child develop skills while making sure you feel supported every step of the way.</p>
+        <a href="about.html" class="btn btn-primary">More About Me</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= SERVICES OVERVIEW ======= -->
+<section class="services-overview">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow-label">What I treat</span>
+      <h2>Specialized Care for Children &amp; Families</h2>
+      <p>Every child is different. I tailor treatment to your child's unique needs, always involving parents as partners in the process.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+          </svg>
+        </div>
+        <h3>ADHD &amp; Executive Functioning</h3>
+        <p>Practical strategies for focus, organization, emotional regulation, and school success — for the child and the whole family.</p>
+        <a href="services.html#adhd" class="learn-more">Learn more</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+          </svg>
+        </div>
+        <h3>OCD &amp; Anxiety</h3>
+        <p>Evidence-based treatment (ERP, CBT) to help children face fears, reduce compulsions, and reclaim confidence and calm.</p>
+        <a href="services.html#ocd" class="learn-more">Learn more</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <h3>Tic Disorders &amp; Tourette's</h3>
+        <p>Specialized therapy (CBIT/HRT) to help children manage tics, reduce stress, and navigate school and social settings with confidence.</p>
+        <a href="services.html#tics" class="learn-more">Learn more</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <h3>Behavior &amp; Parent Coaching</h3>
+        <p>Tools for managing challenging behavior, building routines, and helping parents feel more confident, connected, and in control.</p>
+        <a href="services.html#behavior" class="learn-more">Learn more</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= FAQ ======= -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="faq-inner">
+      <div style="text-align:center; margin-bottom:3.5rem;">
+        <span class="eyebrow-label">Common Questions</span>
+        <h2 style="letter-spacing:-0.01em;">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            What ages do you work with?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>I work with children and young adults ages 3 to 23. Treatment is tailored to each child's developmental level and unique needs, and parents are often actively involved throughout the process to support progress at home and in everyday life.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Do you treat ADHD?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Yes. Treatment focuses on executive functioning, behavior management, emotional regulation, school support, and parent training. I work with the child and the family together, so parents leave sessions with practical strategies they can use at home — not just insight into the diagnosis.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            What is your approach to treating OCD and anxiety?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>I use Exposure and Response Prevention (ERP) — the gold-standard, evidence-based treatment for OCD — as well as Cognitive Behavioral Therapy (CBT) for anxiety. These approaches help children gradually face fears and break free from the avoidance patterns that keep anxiety in charge. I also work closely with parents throughout treatment, since how a family responds to anxiety at home has a big impact on outcomes.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Do you treat tic disorders and Tourette's?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Yes. I use Comprehensive Behavioral Intervention for Tics (CBIT) and Habit Reversal Training (HRT) to help children manage tics, reduce associated distress, and navigate school and social situations with more confidence.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            How are parents involved in treatment?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Very actively. I believe parents are essential partners in therapy — not just observers. Depending on your child's age and needs, parents may attend sessions, receive coaching between sessions, and will always leave with a clear understanding of what we worked on and how to support progress at home. For younger children, parent sessions are often a central part of treatment.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Do you offer virtual therapy?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Yes. Appointments are available both in person and via secure teletherapy, allowing families to choose the format that best fits their needs and schedule. Whether meeting virtually or in the office, sessions are designed to provide the same high-quality, evidence-based care.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Do you accept insurance?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Yes. I am in-network with Blue Cross Blue Shield of Michigan and Blue Care Network. For clients with other insurance plans, services are offered on a self-pay basis. Upon request, I can provide a superbill that you may submit to your insurance company for possible out-of-network reimbursement. Coverage and reimbursement vary by plan, so I recommend contacting your insurance provider to learn more about your benefits.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            What does a first appointment look like?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>The first session is a chance for us to get to know each other. We'll talk through your concerns, your child's history, and what you're hoping to get out of therapy. For younger children, I typically meet with parents first before bringing the child in. From there, we'll build a treatment plan together and discuss what ongoing sessions will look like.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            How do I get started?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Reach out by phone or email to schedule an initial appointment or free consultation. We'll briefly discuss your concerns, answer any questions you may have, and determine whether my services are a good fit for your family's needs.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= INSURANCE STRIP ======= -->
+<div class="insurance-strip">
+  <div class="container">
+    <p>In-network with <strong>Blue Cross Blue Shield of Michigan</strong> and <strong>Blue Care Network</strong> &nbsp;·&nbsp; Superbill provided for out-of-network plans</p>
+  </div>
+</div>
+
+<!-- ======= CTA BAND ======= -->
+<section class="cta-band">
+  <div class="container">
+    <h2>You don't have to navigate these challenges alone.</h2>
+    <p>Finding the right therapist matters. I offer a free consultation so we can get to know each other and figure out if we're a good fit.</p>
+    <a href="contact.html" class="btn btn-white">Schedule Appointment</a>
+  </div>
+</section>
+
+<!-- ======= FOOTER ======= -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg class="footer-logo-mark" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+            <use href="#logo-mark-white"/>
+          </svg>
+          <div class="footer-logo-text">
+            <strong>Korest Psychology</strong>
+            <span>Child &amp; Family Therapy</span>
+          </div>
+        </div>
+        <p>Evidence-based therapy for children, adolescents, and families. Serving Michigan in-person and virtually.</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="contact.html">Schedule Appointment</a></li>
+          <li><a href="contact.html">Send a Message</a></li>
+        </ul>
+        <br/>
+        <h4>Insurance</h4>
+        <ul>
+          <li><a href="#">BCBS Michigan</a></li>
+          <li><a href="#">Blue Care Network</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Korest Psychology &nbsp;·&nbsp; <a href="#">Privacy Policy</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    // Open clicked if it was closed
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+
+</body>
+</html>

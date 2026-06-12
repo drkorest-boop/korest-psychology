@@ -496,9 +496,21 @@
 <script>
   function handleSubmit(e) {
     e.preventDefault();
-    // In production, replace this with your form backend (Netlify Forms, Formspree, etc.)
-    document.getElementById('contactForm').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
+    const form = document.getElementById('contactForm');
+    const data = new FormData(form);
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(data).toString()
+    })
+    .then(() => {
+      form.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    })
+    .catch(() => {
+      alert('Something went wrong. Please email drkorest@korestpsychology.com directly.');
+    });
   }
 </script>
 

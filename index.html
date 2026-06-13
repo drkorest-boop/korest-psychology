@@ -7,7 +7,7 @@
   <meta name="description" content="Evidence-based therapy and parent coaching to help children build confidence, develop skills, and thrive at home, school, and beyond." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 
   <!-- ============================================================
        LOGO SVG — defined once, reused via <use> or inline copies
@@ -100,7 +100,7 @@
       line-height: 1.2;
       color: var(--primary-dark);
     }
-    h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+    h1 { font-size: clamp(2rem, 4.2vw, 3rem); }
     h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
     h3 { font-size: 1.3rem; font-weight: 600; }
     h4 { font-size: 1rem; font-weight: 600; }
@@ -250,8 +250,8 @@
     }
     .hero-inner {
       display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 5rem;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 3rem;
       align-items: center;
     }
     .hero-content .eyebrow {
@@ -265,8 +265,30 @@
       color: var(--primary-mid);
       margin-bottom: 1.4rem;
     }
-    .hero-content h1 { color: var(--primary-dark); margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+    .hero-content h1 { color: var(--primary-dark); margin-bottom: 1.5rem; letter-spacing: -0.02em; font-size: clamp(1.8rem, 3.8vw, 2.75rem); }
     .hero-content h1 em { font-style: italic; color: var(--primary); }
+    .hero-content h1 .cursive {
+      font-family: 'Dancing Script', cursive;
+      font-weight: 700;
+      font-size: 1em;
+      color: var(--primary);
+      font-style: normal;
+      letter-spacing: 0;
+      display: inline-block;
+      position: relative;
+      padding-bottom: 4px;
+    }
+    .hero-content h1 .cursive::after {
+      content: '';
+      position: absolute;
+      left: 2px;
+      right: -2px;
+      bottom: -2px;
+      height: 2.5px;
+      background: var(--primary);
+      border-radius: 2px;
+      transform: rotate(-0.6deg);
+    }
     .hero-content p { font-size: 1.05rem; color: var(--text-light); margin-bottom: 2.5rem; line-height: 1.85; }
     .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
     .hero-photo { height: 520px; border-radius: var(--radius-lg); position: relative; }
@@ -499,6 +521,38 @@
     .footer-bottom a:hover { color: var(--white); }
 
     /* ============================================================
+       MARQUEE BANNER
+    ============================================================ */
+    .marquee-banner {
+      background: var(--primary);
+      padding: 14px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .marquee-track {
+      display: inline-flex;
+      animation: marqueeScroll 35s linear infinite;
+    }
+    .marquee-track span {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 2.8px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.92);
+      padding: 0 2.5rem;
+    }
+    .marquee-track span.dot {
+      color: rgba(255,255,255,0.4);
+      padding: 0;
+      letter-spacing: 0;
+    }
+    @keyframes marqueeScroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ============================================================
        RESPONSIVE
     ============================================================ */
     @media (max-width: 900px) {
@@ -628,7 +682,7 @@
     <div class="hero-inner">
       <div class="hero-content">
         <span class="eyebrow">Licensed Psychologist · Michigan</span>
-        <h1>Helping Kids Thrive. Helping Parents Feel Confident.</h1>
+        <h1>Helping Kids <span class="cursive">Thrive.</span><br>Helping Parents Feel <span class="cursive">Confident.</span></h1>
         <p>Evidence-based therapy and parent coaching to help children build confidence, develop skills, and thrive at home, school, and beyond.</p>
         <div class="hero-actions">
           <a href="contact.html" class="btn btn-primary">Schedule Appointment</a>
@@ -650,6 +704,24 @@
     </div>
   </div>
 </section>
+
+<!-- ======= MARQUEE BANNER ======= -->
+<div class="marquee-banner" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Rooted in Research</span><span class="dot">·</span>
+    <span>Built for Families</span><span class="dot">·</span>
+    <span>Rooted in Research</span><span class="dot">·</span>
+    <span>Built for Families</span><span class="dot">·</span>
+    <span>Rooted in Research</span><span class="dot">·</span>
+    <span>Built for Families</span><span class="dot">·</span>
+    <span>Rooted in Research</span><span class="dot">·</span>
+    <span>Built for Families</span><span class="dot">·</span>
+    <span>Rooted in Research</span><span class="dot">·</span>
+    <span>Built for Families</span><span class="dot">·</span>
+    <span>Rooted in Research</span><span class="dot">·</span>
+    <span>Built for Families</span><span class="dot">·</span>
+  </div>
+</div>
 
 <!-- ======= PAIN POINTS ======= -->
 <section class="pain-points">

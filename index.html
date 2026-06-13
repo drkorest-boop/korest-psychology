@@ -265,6 +265,8 @@
       color: var(--primary-mid);
       margin-bottom: 1.4rem;
     }
+    .eyebrow-stack { display: flex; flex-direction: column; gap: 0.3rem; margin-bottom: 1.5rem; }
+    .eyebrow-stack .eyebrow { margin-bottom: 0; }
     .hero-content h1 { color: var(--primary-dark); margin-bottom: 1.5rem; letter-spacing: -0.02em; font-size: clamp(1.8rem, 3.8vw, 2.75rem); }
     .hero-content h1 em { font-style: italic; color: var(--primary); }
     .hero-content h1 .cursive {
@@ -686,7 +688,10 @@
   <div class="container">
     <div class="hero-inner">
       <div class="hero-content">
-        <span class="eyebrow">Licensed Psychologist · Michigan</span>
+        <div class="eyebrow-stack">
+          <span class="eyebrow">Licensed Psychologist · Michigan</span>
+          <span class="eyebrow">Ages 3–23 · In-Person &amp; Virtual</span>
+        </div>
         <h1>Helping Kids <span class="cursive">Thrive.</span><br>Helping Parents Feel <span class="cursive">Confident.</span></h1>
         <p>Evidence-based therapy and parent coaching to help children build confidence, develop skills, and thrive at home, school, and beyond.</p>
         <div class="hero-actions">
@@ -700,10 +705,6 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
           </svg>
           Your photo here
-        </div>
-        <div class="hero-badge">
-          <strong>Ages 3–23</strong>
-          In-person &amp; virtual
         </div>
       </div>
     </div>

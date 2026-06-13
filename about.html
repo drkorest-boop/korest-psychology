@@ -134,15 +134,35 @@
       border: 1.5px solid rgba(44,95,74,0.2); z-index: 0; pointer-events: none;
     }
 
-    /* CREDENTIAL BADGE */
-    .cred-strip {
-      display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem;
+    /* QUICK CREDENTIALS IN HERO */
+    .quick-creds {
+      margin-top: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
     }
-    .cred-chip {
-      background: var(--primary-dark); color: rgba(255,255,255,0.9);
-      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.03em;
-      padding: 0.4rem 0.9rem; border-radius: 20px;
+    .quick-cred-item {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+      color: var(--text-light);
     }
+    .quick-cred-item .deg {
+      font-weight: 600;
+      color: var(--primary-dark);
+      white-space: nowrap;
+    }
+    .quick-cred-item.phd-highlight .deg {
+      color: var(--primary);
+      font-size: 0.95rem;
+    }
+    .quick-cred-item .sep {
+      color: var(--border);
+      font-weight: 300;
+    }
+    .cred-strip { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem; }
+    .cred-chip { background: var(--primary-dark); color: rgba(255,255,255,0.9); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.03em; padding: 0.4rem 0.9rem; border-radius: 20px; }
 
     /* PHILOSOPHY SECTION */
     .philosophy { background: var(--white); }
@@ -302,6 +322,23 @@
         <span class="eyebrow-label">About Dr. Rachel</span>
         <h1>Hi, I'm Dr. Rachel — and I'm here to help.</h1>
         <p class="subtitle">I'm a licensed psychologist in Michigan who specializes in helping children, adolescents, and families navigate ADHD, OCD, anxiety, tic disorders, and behavioral challenges — with evidence-based strategies that actually work in real life.</p>
+        <div class="quick-creds">
+          <div class="quick-cred-item phd-highlight">
+            <span class="deg">Ph.D., School Psychology</span>
+            <span class="sep">—</span>
+            <span>Michigan State University</span>
+          </div>
+          <div class="quick-cred-item">
+            <span class="deg">M.A., School Psychology</span>
+            <span class="sep">—</span>
+            <span>Michigan State University</span>
+          </div>
+          <div class="quick-cred-item">
+            <span class="deg">B.A., Psychology</span>
+            <span class="sep">—</span>
+            <span>The College of Wooster</span>
+          </div>
+        </div>
       </div>
       <div class="page-hero-photo">
         <div class="photo-placeholder">

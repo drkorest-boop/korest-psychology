@@ -1026,5 +1026,44 @@
   }
 </script>
 
+<script>
+/* ── Scroll animations ── */
+(function() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var groups = [
+    { sel: '.hero-content > *',       stagger: 0.10 },
+    { sel: '.hero-photo',             stagger: 0    },
+    { sel: '.pain-points-text > *',   stagger: 0.10 },
+    { sel: '.pain-item',              stagger: 0.09 },
+    { sel: '.about-teaser-inner > *', stagger: 0.12 },
+    { sel: '.service-card',           stagger: 0.08 },
+    { sel: '.faq-item',               stagger: 0.05 },
+    { sel: '.insurance-strip',        stagger: 0    },
+    { sel: '.cta-band .container > *',stagger: 0.10 },
+    { sel: '.footer-grid > *',        stagger: 0.08 },
+  ];
+  var seen = new Set();
+  groups.forEach(function(g) {
+    document.querySelectorAll(g.sel).forEach(function(el, i) {
+      if (seen.has(el)) return;
+      seen.add(el);
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(22px)';
+      el.style.transition = 'opacity 0.65s ease ' + (i * g.stagger) + 's, transform 0.65s ease ' + (i * g.stagger) + 's';
+    });
+  });
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  seen.forEach(function(el) { observer.observe(el); });
+})();
+</script>
+
 </body>
 </html>

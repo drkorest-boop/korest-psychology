@@ -146,10 +146,9 @@
 
     /* PHILOSOPHY SECTION */
     .philosophy { background: var(--white); }
-    .philosophy-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
-    .philosophy-text h2 { margin-bottom: 1.5rem; }
-    .philosophy-text p { margin-bottom: 1.1rem; }
-    .philosophy-pillars { display: flex; flex-direction: column; gap: 1rem; }
+    .philosophy-header { text-align: center; margin-bottom: 3rem; }
+    .philosophy-header h2 { margin-top: 0.5rem; }
+    .philosophy-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
     .pillar {
       padding: 1.75rem 2rem; border-radius: var(--radius-md);
       background: var(--off-white); border: 1px solid var(--border);
@@ -250,7 +249,8 @@
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
-      .page-hero-inner, .philosophy-inner, .credentials-inner, .personal-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .page-hero-inner, .credentials-inner, .personal-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .philosophy-pillars { grid-template-columns: 1fr; }
       .page-hero-photo { height: 340px; }
       .personal-photo { height: 300px; }
       .expect-steps { grid-template-columns: 1fr; }
@@ -316,31 +316,26 @@
 <!-- PHILOSOPHY -->
 <section class="philosophy">
   <div class="container">
-    <div class="philosophy-inner">
-      <div class="philosophy-text">
-        <span class="eyebrow-label">My Approach</span>
-        <h2>Therapy should give your family real tools, not just a place to talk.</h2>
-        <p>When families come to me, they're often exhausted. They've read the books, tried the strategies, and are still stuck. My job isn't to tell you what you're doing wrong — it's to understand your child specifically and build a plan that actually fits your family.</p>
-        <p>I work from a collaborative model, which means you're a partner in this process, not just a bystander. Parents learn the same skills and language their child is learning in session, so progress doesn't stop when the appointment ends.</p>
-        <p>My treatment approach is grounded in the research. For anxiety and OCD, I use Cognitive Behavioral Therapy (CBT) with Exposure and Response Prevention (ERP). For tics, I use Comprehensive Behavioral Intervention for Tics (CBIT). For ADHD and behavioral challenges, I draw on behavioral parent training and executive function coaching — and I tailor everything to the individual child in front of me.</p>
+    <div class="philosophy-header">
+      <span class="eyebrow-label">My Approach</span>
+      <h2>How I work with families</h2>
+    </div>
+    <div class="philosophy-pillars">
+      <div class="pillar">
+        <h3>Evidence-Based First</h3>
+        <p>I use treatments with strong research support — not trends. If something has been studied and shown to work, that's the foundation we build on.</p>
       </div>
-      <div class="philosophy-pillars">
-        <div class="pillar">
-          <h3>Evidence-Based First</h3>
-          <p>I use treatments with strong research support — not trends. If something has been studied and shown to work, that's the foundation we build on.</p>
-        </div>
-        <div class="pillar">
-          <h3>Practical Over Perfect</h3>
-          <p>Strategies need to work on a Tuesday morning when everyone's running late. I focus on tools families can actually use, not just what sounds good in theory.</p>
-        </div>
-        <div class="pillar">
-          <h3>Parents as Partners</h3>
-          <p>Children don't grow in a vacuum. I actively involve parents throughout treatment so progress carries over into daily life at home and school.</p>
-        </div>
-        <div class="pillar">
-          <h3>The Whole Child</h3>
-          <p>I look beyond the presenting problem to understand each child's strengths, environment, and what makes them tick — because that context shapes everything.</p>
-        </div>
+      <div class="pillar">
+        <h3>Practical Over Perfect</h3>
+        <p>Strategies need to work on a Tuesday morning when everyone's running late. I focus on tools families can actually use, not just what sounds good in theory.</p>
+      </div>
+      <div class="pillar">
+        <h3>Parents as Partners</h3>
+        <p>Children don't grow in a vacuum. I actively involve parents throughout treatment so progress carries over into daily life at home and school.</p>
+      </div>
+      <div class="pillar">
+        <h3>The Whole Child</h3>
+        <p>I look beyond the presenting problem to understand each child's strengths, environment, and what makes them tick — because that context shapes everything.</p>
       </div>
     </div>
   </div>
@@ -530,6 +525,45 @@
     </div>
   </div>
 </footer>
+
+<script>
+/* ── Scroll animations ── */
+(function() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var groups = [
+    { sel: '.page-hero-inner > *',    stagger: 0.12 },
+    { sel: '.philosophy-header > *',  stagger: 0.10 },
+    { sel: '.pillar',                 stagger: 0.08 },
+    { sel: '.credential-card',        stagger: 0.08 },
+    { sel: '.credentials-inner > *',  stagger: 0.12 },
+    { sel: '.personal-card',          stagger: 0.07 },
+    { sel: '.step-card',              stagger: 0.10 },
+    { sel: '.about-photo-wrap',       stagger: 0    },
+    { sel: '.cta-band .container > *',stagger: 0.10 },
+    { sel: '.footer-grid > *',        stagger: 0.08 },
+  ];
+  var seen = new Set();
+  groups.forEach(function(g) {
+    document.querySelectorAll(g.sel).forEach(function(el, i) {
+      if (seen.has(el)) return;
+      seen.add(el);
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(22px)';
+      el.style.transition = 'opacity 0.65s ease ' + (i * g.stagger) + 's, transform 0.65s ease ' + (i * g.stagger) + 's';
+    });
+  });
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  seen.forEach(function(el) { observer.observe(el); });
+})();
+</script>
 
 </body>
 </html>

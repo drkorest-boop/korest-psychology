@@ -524,9 +524,78 @@
       .nav-links.open { display: flex; }
       nav { position: relative; }
     }
+
+    /* ============================================================
+       SPLASH SCREEN
+    ============================================================ */
+    #splash {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: var(--primary-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      animation: splashFadeOut 0.7s ease-in-out 2.2s forwards;
+      pointer-events: none;
+    }
+
+    #splash .splash-logo {
+      opacity: 0;
+      transform: translateY(12px);
+      animation: splashLogoIn 0.8s cubic-bezier(0.22,1,0.36,1) 0.3s forwards;
+    }
+
+    #splash .splash-tagline {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      opacity: 0;
+      animation: splashLogoIn 0.8s ease 0.7s forwards;
+    }
+
+    @keyframes splashLogoIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes splashFadeOut {
+      to { opacity: 0; visibility: hidden; }
+    }
+
+    body.splash-active {
+      overflow: hidden;
+    }
   </style>
 </head>
-<body>
+<body class="splash-active">
+
+<!-- ======= SPLASH SCREEN ======= -->
+<div id="splash">
+  <div class="splash-logo">
+    <svg width="90" height="90" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="36" cy="36" r="34" fill="rgba(255,255,255,0.1)"/>
+      <line x1="36" y1="54" x2="36" y2="30" stroke="#e8f0eb" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M36 40 Q22 36 20 24 Q32 24 36 36" fill="#e8f0eb" opacity="0.9"/>
+      <path d="M36 36 Q50 32 52 20 Q40 20 36 32" fill="#a8c9b5" opacity="0.9"/>
+      <ellipse cx="36" cy="24" rx="3.5" ry="5.5" fill="#e8f0eb"/>
+    </svg>
+  </div>
+  <div class="splash-tagline">Korest Psychology</div>
+</div>
+
+<script>
+  // Remove splash from DOM after animation completes so it doesn't block interaction
+  document.getElementById('splash').addEventListener('animationend', function(e) {
+    if (e.animationName === 'splashFadeOut') {
+      this.remove();
+      document.body.classList.remove('splash-active');
+    }
+  });
+</script>
 
 <!-- ======= NAV ======= -->
 <nav>

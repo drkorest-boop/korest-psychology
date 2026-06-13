@@ -520,6 +520,8 @@
     .footer-bottom a { color: rgba(255,255,255,0.45); transition: color 0.2s; }
     .footer-bottom a:hover { color: var(--white); }
 
+    .pain-btn-mobile { display: none; }
+
     /* ============================================================
        MARQUEE BANNER
     ============================================================ */
@@ -565,6 +567,9 @@
     }
     @media (max-width: 640px) {
       section { padding: 4rem 0; }
+      .hero-content h1 { font-size: 7.5vw; }
+      .pain-btn-desktop { display: none; }
+      .pain-btn-mobile { display: inline-flex; margin-top: 1.5rem; }
       .nav-toggle { display: flex; }
       .nav-links {
         display: none; position: absolute;
@@ -731,7 +736,7 @@
         <span class="eyebrow-label">You may be here because</span>
         <h2>These challenges feel overwhelming — and you're not sure where to turn.</h2>
         <p>You love your child deeply and want to help, but the day-to-day feels exhausting. You don't have to navigate this alone.</p>
-        <a href="contact.html" class="btn btn-primary">Let's Talk</a>
+        <a href="contact.html" class="btn btn-primary pain-btn-desktop">Let's Talk</a>
       </div>
       <div class="pain-list">
         <div class="pain-item">
@@ -751,6 +756,7 @@
           <p>You've tried strategies that work for other kids, but nothing seems to stick for yours.</p>
         </div>
       </div>
+      <a href="contact.html" class="btn btn-primary pain-btn-mobile">Let's Talk</a>
     </div>
   </div>
 </section>
